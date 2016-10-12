@@ -3,8 +3,8 @@ using System.Collections;
 
 public abstract class EntityBase : MonoBehaviour {
 
-    private int HP;
-    private float speed;
+    protected int HP;
+    protected float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -26,13 +26,13 @@ public abstract class EntityBase : MonoBehaviour {
     }
 
     //倒された時の処理
-    private void Die()
+    protected void Die()
     {
         Destroy(this);
     }
 
     //ダメージを受けた時の処理
-    private void Damaged()
+    protected void Damaged()
     {
 
     }

@@ -255,7 +255,7 @@ GameObject:
   - 4: {fileID: 603344207}
   - 212: {fileID: 603344206}
   m_Layer: 0
-  m_Name: SampleObj
+  m_Name: midObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

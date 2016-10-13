@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public abstract class EntityBase : MonoBehaviour {
 
@@ -20,19 +21,19 @@ public abstract class EntityBase : MonoBehaviour {
     protected abstract void Init();
 
     //移動処理
-    public void Move()
+    protected virtual void Move()
     {
 
     }
 
     //倒された時の処理
-    protected void Die()
+    protected virtual void Die()
     {
         Destroy(this);
     }
 
     //ダメージを受けた時の処理
-    protected void Damaged()
+    protected virtual void Damaged()
     {
 
     }

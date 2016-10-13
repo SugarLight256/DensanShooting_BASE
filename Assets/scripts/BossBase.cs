@@ -15,6 +15,7 @@ public class BossBase : EntityBase
     };
 
     //列挙対に対応する座標一覧
+    [SerializeField]
     private Vector3[] pos = new Vector3[]{
         new Vector3(0,0),
         new Vector3(0,5) ,
@@ -32,7 +33,8 @@ public class BossBase : EntityBase
 
     private const float timerMax = 2.0f;
     private const float timerMin = 3.0f;
-    private const float moveTime = 1.5f;
+    [SerializeField]
+    private float moveTime = 1.5f;
     
     /// ここまで変数宣言/////////////////////////////////////////////////////////
 

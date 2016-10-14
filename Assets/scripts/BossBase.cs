@@ -31,8 +31,10 @@ public class BossBase : EntityBase
     private int pathCount = 0;//どの中継地点にいるか
     private float timer = 0;//タイマー
 
-    private const float timerMax = 2.0f;
-    private const float timerMin = 3.0f;
+    [SerializeField]
+    private float timerMax = 2.0f;
+    [SerializeField]
+    private float timerMin = 3.0f;
     [SerializeField]
     private float moveTime = 1.5f;
     

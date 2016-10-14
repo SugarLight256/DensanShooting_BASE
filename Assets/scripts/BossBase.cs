@@ -19,7 +19,7 @@ public class BossBase : EntityBase
     private Vector3[] pos = new Vector3[]{
         new Vector3(0,0),
         new Vector3(0,5) ,
-        new Vector3(0,-1),
+        new Vector3(0,-3),
         new Vector3(7,5),
         new Vector3(-7,5)
     };
@@ -27,6 +27,7 @@ public class BossBase : EntityBase
     //道順リスト
     private List<Vector3[]> pathList = new List<Vector3[]>();
 
+    [SerializeField]
     private int pathIndex = 0;//どの道のりを選んでいるか
     private int pathCount = 0;//どの中継地点にいるか
     private float timer = 0;//タイマー
@@ -68,7 +69,7 @@ public class BossBase : EntityBase
                 {
                     pathMove();
                 }
-                timer = Random.Range(timerMin, timerMax);//1~3秒その場で待機
+                timer = Random.Range(timerMin, timerMax);//その場で待機
             }
         }
         timer -= Time.deltaTime;
@@ -77,7 +78,7 @@ public class BossBase : EntityBase
     //ランダム移動
     private void randomMove()
     {
-        transform.DOMove(pos[(int)Random.Range(0, 4)], moveTime);//0~4ランダムな指定座標に移動
+        transform.DOMove(pos[(int)Random.Range(0, 5)], moveTime);//0~4ランダムな指定座標に移動
     }
 
     //一定の道に沿った移動処理

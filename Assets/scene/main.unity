@@ -325,10 +325,13 @@ MonoBehaviour:
   pos:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 5, z: 0}
-  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: -3, z: 0}
   - {x: 7, y: 5, z: 0}
   - {x: -7, y: 5, z: 0}
-  moveTime: 1.5
+  pathIndex: 0
+  timerMax: 3
+  timerMin: 2
+  moveTime: 1
 --- !u!1 &824180038
 GameObject:
   m_ObjectHideFlags: 0

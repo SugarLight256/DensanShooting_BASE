@@ -7,34 +7,44 @@ public class BossWeapon : MonoBehaviour {
     private float coolTime;
     [SerializeField]
     private float coolMax;
+    [SerializeField]
+    private float shift;
+    [SerializeField]
+    private float radius = 0.5f;
+
+    [SerializeField]
+    private bool isActive = true;
 
     [SerializeField]
     private GameObject bullet;
 
+    private float time=0;
+
     void Start()
     {
-
+        StartCoroutine(fire());
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        tryFire();
+        move();
     }
 
-    private void tryFire()
+    //一定間隔で弾を発射するコルーチン
+    private IEnumerator fire()
     {
-        coolTime -= Time.deltaTime;
-        if(coolTime <= 0)
+        while (true)
         {
-            fire();
-            coolTime = coolMax;
+            Instantiate(bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(coolMax);
         }
     }
 
-    //弾発射
-    private void fire()
+    private void move()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        time += (Time.fixedDeltaTime);
+        time %= 2*Mathf.PI;
+        transform.localPosition = new Vector3(radius * Mathf.Cos(time + shift * Mathf.PI),radius * Mathf.Sin(time + shift * Mathf.PI), 0);
     }
 
 }

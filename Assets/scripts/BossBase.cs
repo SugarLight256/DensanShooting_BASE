@@ -65,6 +65,10 @@ public class BossBase : EntityBase
                 {
                     randomMove();
                 }
+                else if(pathIndex == -2)
+                {
+                    //dont move
+                }
                 else
                 {
                     pathMove();

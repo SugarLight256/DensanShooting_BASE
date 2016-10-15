@@ -35,7 +35,10 @@ public class BossWeapon : MonoBehaviour {
     {
         while (true)
         {
-            Instantiate(bullet, transform.position, transform.rotation);
+            if (isActive)
+            {
+                Instantiate(bullet, transform.position, transform.rotation);
+            }
             yield return new WaitForSeconds(coolMax);
         }
     }

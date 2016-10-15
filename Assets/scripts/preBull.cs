@@ -12,10 +12,11 @@ public class preBull : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(transform.position.y <= -10)
+	    if(transform.position.y <= -10 || transform.position.y >= 10 || transform.position.x <= -15 || transform.position.x >= 15)
         {
             Destroy(transform.gameObject);
         }
-        transform.position += new Vector3(0,-0.2f, 0);
+        Vector3 delta = -transform.up * speed * Time.deltaTime;
+        transform.position += delta;
 	}
 }

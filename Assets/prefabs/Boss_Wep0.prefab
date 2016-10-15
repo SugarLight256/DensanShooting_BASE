@@ -54,8 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolTime: 0
   coolMax: 0.1
-  shift: 1
+  shift: 0
   radius: 0.5
+  rotateSpeed: 1
+  isActive: 1
   bullet: {fileID: 1000012771840076, guid: 213c1beae74440c40b519e49f7d09bdf, type: 2}
 --- !u!212 &212000010873708030
 SpriteRenderer:
